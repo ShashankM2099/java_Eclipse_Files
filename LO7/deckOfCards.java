@@ -1,0 +1,37 @@
+/*
+ * author :[Shashank Mondrati]
+ * version @ [ 4/2/2020]
+ * Program : This code creates an array for suits and an array ranks for 13 cards.
+ */
+package LO7;
+import java.util.*;
+public class deckOfCards {
+
+	public static void main(String[] args) { // main method
+		// TODO Auto-generated method stub
+		ArrayList<Double> stuff = new ArrayList<>();
+	
+		int[] deck = new int[52];
+		String [] suits = {" Spades", " Hearts ", " Diamonds", " Clubs"}; // 4 suits in a deck
+		String [] ranks = {" Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10","Jack", " Queen", "King"}; // ranks in a deck
+		// initliazing the cards
+		for ( int i = 0; i < deck.length; i++)
+			deck[i]=1;
+		// shuffling the cards
+
+		for (int i = 0; i<deck.length; i++) { // for loop
+			// generating an index randomly
+			int index = (int)(Math.random() * deck.length);
+			int temp = deck[i];
+			deck [i]=deck[index];
+			deck[index]= temp;
+		}
+		for (int i =0; i<4; i++) { // for loop
+			String suit = suits[deck[i]/13];
+			String rank = ranks[deck[i]/13];
+			System.out.println( " ID002");
+			System.out.println(" Cards Number"  + deck[i] + " :" + rank + " of" + suit);
+			
+		}
+	}
+}
